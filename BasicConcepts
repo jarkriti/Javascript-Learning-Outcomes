@@ -1,0 +1,7 @@
+1) Syntax Parser:
+
+A programme called as compiler converts source code written in Javascript to a machone understandable language.
+It reads code line by line and check if there are any syntax errors according to its code.
+This programme that checks syntax is called as syntax parser.
+
+2) Lexical Environment

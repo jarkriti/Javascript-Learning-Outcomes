@@ -1,7 +1,30 @@
 1) Syntax Parser:
 
-A programme called as compiler converts source code written in Javascript to a machone understandable language.
+A programm called as compiler converts source code written in Javascript to a machine understandable language.
 It reads code line by line and check if there are any syntax errors according to its code.
-This programme that checks syntax is called as syntax parser.
+This programm that checks syntax is called as syntax parser.
 
 2) Lexical Environment
+
+This means where where something physically sits in your code i.e. inside which function or is it present globally. 
+Few things are determined by the position of your variables and functions inside a code.
+
+3) Execution Context
+
+A wrapper to help manage the code that is running. The lexical environment that is currently running is defined by execution context.
+
+4) Name/Value pairs and Objects
+
+Name that maps to unique value. A name can only have one value in a given execution context.
+Value can be more name/value pairs.
+
+Ex. Address = "77N Almaden Ave"
+
+Object is collection of name value pairs.
+
+5) Global Environment and global object
+
+Anything written outside of all the functions, comes under global execution context.
+Execution context has global object and a special variable called 'this'.
+
+

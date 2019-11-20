@@ -40,4 +40,43 @@ global: not inside a function
 
 Every execution context has your code, outer environment, global object and this variable.
 
+6) Creation and Hoisting
+
+Execution context is created in two phase
+
+a) Creation phase
+
+Global object, this is setup in memory
+outer env is created
+
+Memory space for variables and functions is setup. It is called as Hoisting
+Before code starts execution line by line, variables and functions are setup in memory.
+
+Function is placed in memory.
+Variable declaration is set up in memory. Its value is not stored. 
+Undefined placeholder is set to it.
+
+b) Execution Phase
+
+Code is run line by line
+
+
+
+
+7) Undefined
+
+Javascript has special value/ keyword called undefined that means variable has not been set yet but it is declared.
+Never set any variable undefined yourself. Let it always mean I have never defined this variable.
+
+
+8) JS is Single Threaded and synchronous execution
+
+One command is getting executed at a time: single threaded.
+One line at a time in th eorder it appears: synchronous
+
+
+9) Function invocation and excecution context
+
+
+
 

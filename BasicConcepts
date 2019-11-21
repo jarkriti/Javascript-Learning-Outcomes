@@ -78,5 +78,52 @@ One line at a time in th eorder it appears: synchronous
 9) Function invocation and excecution context
 
 
+Invocation: running or calling a function
+
+Every function execution creates a new execution context and recent function call is placed on execution stack.
+When it finishes execution, it is popped out of stack.
+Even if function calls itself, a new execution context is created.
+Whatever is on top of stack is currently running.
+
+10) Functions, Contexts and Variable environments
+
+Variable env: where the variable lives.
+and how they relate to each other in memory.
+
+11) Scope Chain
+
+Every execution context has reference to its outer environment.
+Ourter reference is calculated by lexical environment.
+
+If variable is not declared inside an execution env, it looks for outer ref if not found it looks in its outer ref
+This is called as scope chain.
+
+12) Scope ES6 and Let
+scope is where your variable is available.
+
+
+let allows block scoping
+You cannot use variable before writing 
+let a='Hello';
+
+It has block scoping. Vatiable won't available outside block.
+
+13) Asynchronous callbacks
+
+Asynchronous: more than one at a time
+
+Inside browser, there is a a javascript engine. But along with this there are other programs like rendering engine or program that
+takes care of HTTP requests
+
+
+Event Queue is present inside JS engine
+JS engine executes code synchronously.
+But the browser programs are being executed alongwith JS code asynchronously.
+So all the browser evets are placed in event queue.
+
+When JS engine execution stacks get empty it takes out first event from event queue, creates it execution context and completes its execution.
+Then takes next event if stack is empty and executes it.
+
+
 
 

@@ -124,6 +124,45 @@ So all the browser evets are placed in event queue.
 When JS engine execution stacks get empty it takes out first event from event queue, creates it execution context and completes its execution.
 Then takes next event if stack is empty and executes it.
 
+14) Types and Javascript
+
+Dynamic Typing: You don't tell what type of data your variable holds. Engine figures it out while code is running depending on the value
+assigned to the variable.
+Ex var isNew=true
+isNew="Yup"
+isNew=1
+
+Static Typing: You tell beforehand what type of data variable will hold.
+Ex. bool isNew = true
+    bool isNew = "Hello" //error
+
+15) Primitve Types: 6
+
+Primitve type: data that represents single value. Something that is not an object, not a collection
+
+a) undefined
+b) null //lack of existence. Programmer can assign it for variable set to nothing
+c) boolean: true or false
+d) number: floating point number always some decimal
+e) string: sequence of characters. single or double quotes
+f) symbol ES6
+
+
+16) Operators
+
+A special function that is syntactically written differently.
+Generally, it has two parameters and one written type.
+
+
+17) Operators precedence and associativity
+
+precedence: which one gets called first when there are multiple Operators
+associativity: what order an operator gets called in L to R (left associativity) R to L(right) when same precedence operators are encountered
+
+
+
+
+
 
 
 

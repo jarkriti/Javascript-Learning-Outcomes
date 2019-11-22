@@ -149,4 +149,37 @@ click event
 
 //Because though event occured but execution stack was not empty. SO JS engine first executed execution stack then added event handler from queue.
 
+//---------------------------------------------//
+
+
+//Operators
+
+var a = 3 + 4;
+console.log(a); //7
+
+
+/*
+function +(a,b){
+    return // add two numbers
+}
+*/
+
+
+// +(a,b) is difficult to understand. So JS allows infix notation where operator sits between the two parameters.
+
+//operator associativity and precedence
+
+var a = 3 + 4 * 5
+console.log(a); //23 multiplication has higher precedence
+
+
+var a=2, b=3, c=4
+a=b=c;
+console.log(a); //4
+console.log(b); //4
+console.log(c); //4
+
+// assignment operator has right to left associativity
+
+
 

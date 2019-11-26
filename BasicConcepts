@@ -160,7 +160,9 @@ precedence: which one gets called first when there are multiple Operators
 associativity: what order an operator gets called in L to R (left associativity) R to L(right) when same precedence operators are encountered
 
 
+18) Coercion: converting a value from one type to another.
 
+19) Strict equality: When JS checks if two values are eual and of same type
 
 
 

@@ -179,7 +179,37 @@ console.log(a); //4
 console.log(b); //4
 console.log(c); //4
 
-// assignment operator has right to left associativity
+// coercion
+
+var a = 1 + '2'
+console.log(a) //12 1 coerced to string 1
+
+// comparison operators
+
+console.log(1<2<3)
+//Left to right associativity
+
+//1<2 = True (1)
+//1<3 True
+
+console.log(3<2<1)
+//o/p: true
+//3<2 False(0) coercion false to 0
+//0<1 true
+
+// Strict equality
+
+3==3 //true
+'3'==3 //true because of coercion
+false==0 //true
+
+3 === '3' //false
+
+
+
+
+
+
 
 
 

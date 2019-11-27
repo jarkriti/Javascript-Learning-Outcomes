@@ -206,6 +206,35 @@ false==0 //true
 3 === '3' //false
 
 
+//---------------------------------------------//
+
+//Existence and booleans
+
+var a;  //undefined
+if(a || a===0) //a is converted to boolean and boolean value for undefined is false coercion advantage
+console.log("A is true");
+else
+console.log("a is undefined"); 
+
+
+//a===0 because if a is 0 it doesn't mean lack of existence
+
+
+//---------------------------------------------//
+
+//Default values
+
+function greet(name){
+    name =name || 'Kriti' //legacy way of setting default value. ES6 has introduced new way 
+    //undefine || Kriti returns Kriti
+    //careful about 0 0||1 is 1
+    console.log("hello "+name);
+}
+greet("Kriti"); //Hello Kriti
+
+greet(); //Hello undefined name coerced to string 
+
+// || operator returns first value that is true 
 
 
 

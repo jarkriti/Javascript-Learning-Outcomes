@@ -162,7 +162,25 @@ associativity: what order an operator gets called in L to R (left associativity)
 
 18) Coercion: converting a value from one type to another.
 
-19) Strict equality: When JS checks if two values are eual and of same type
+19) Strict equality: When JS checks if two values are eual and of same type.
+
+20) Existence and Booleans
+
+Boolean(undefined) //false
+Boolean(null) //false
+Boolean("") //false
+Boolean(0) //false doesn't mean lack of existence
+
+
+21) Default values returned using OR operator
+
+22) Objects and declaration
+Object : colleaction of value
+Object has property, methods, another object(considered as property) sits in memory and has reference to property and methods
+
+
+
+
 
 
 

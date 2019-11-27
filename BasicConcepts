@@ -178,7 +178,7 @@ Boolean(0) //false doesn't mean lack of existence
 Object : colleaction of value
 Object has property, methods, another object(considered as property) sits in memory and has reference to property and methods
 
-
+Object
 
 
 

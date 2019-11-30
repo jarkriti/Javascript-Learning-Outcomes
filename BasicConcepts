@@ -178,7 +178,37 @@ Boolean(0) //false doesn't mean lack of existence
 Object : colleaction of value
 Object has property, methods, another object(considered as property) sits in memory and has reference to property and methods
 
-Object
+Object can be accessed by member access operator in following manner
+
+person["firstname"]="Kriti"
+
+[] is member access operator
+
+member access operator is useful if you want to access some object with its property that is set dynamically
+
+
+22) Object literals
+
+var person = {} //same as new object
+
+23) Namespace
+
+A container for variables and functions to keep variables and functions with same name separate
+If you want to declare two variables with same name you can do it by declaring these variables as object properties.
+
+Ex. Faking namespaces
+
+var english = {
+    greet:"Hello"
+}
+var spanish = {
+    greet:"Hola"
+}
+
+console.log(english.greet) //Hello
+console.log(spanish.greet) //Hola
+
+
 
 
 

@@ -237,6 +237,51 @@ greet(); //Hello undefined name coerced to string
 // || operator returns first value that is true 
 
 
+//---------------------------------------------//
+
+// Objects and its operators
+
+var person = new Object();
+person["firstname"]="Kriti"
+person["secondname"]="Jar"
+
+var firstnameproperty = "firstname"
+
+console.log(person)
+console.log(person["firstnameproperty"]); //Kriti
+console.log(person.firstname); //Kriti
+
+
+person.address = new Object();
+person.address.stree="77N Almaden Ave"
+person.address.city="San Jose"
+
+console.log(person.address.stree); //77N Almaden Ave //clean easy to debug
+console.log(person["address"]["city"])//San Jose //use when dynamically property is obtained
+
+
+//---------------------------------------------//
+
+//Object literals
+
+var Kriti = {
+    firstname:"Kriti",
+    lastname:"jar",
+    address:{
+        street:"77N Almaden Ave",
+        city:"San Jose"
+    }
+}
+//console.log(person.firstname); //Kriti
+
+function greet(person){
+    console.log("Hi "+person.firstname); 
+}
+
+
+greet(Kriti)//Hi Kriti
+greet({firstname:"Manu",lastname:"gupta"}) //Hi Manu
+
 
 
 

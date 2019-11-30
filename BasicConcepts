@@ -208,6 +208,15 @@ var spanish = {
 console.log(english.greet) //Hello
 console.log(spanish.greet) //Hola
 
+24) JSON: Javascript Object notation inpired by javascript object literal syntax
+
+JSON is subtype of object literal. In JSON it is compulsory to wrap peroperty name in double quotes whereas
+in object literal syntax it is optional.
+
+Now-a-days JSON is used to transfer data in internet.
+JS provide easy way to convert data from object literal to JSON and other way
+
+
 
 
 

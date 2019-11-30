@@ -280,8 +280,23 @@ function greet(person){
 
 
 greet(Kriti)//Hi Kriti
-greet({firstname:"Manu",lastname:"gupta"}) //Hi Manu
+greet({firstname:"Manu",lastname:"gupta"}) //Hi Manu //creating object on the fly
 
+//---------------------------------------------//
+
+//JSON to object literal
+
+var jsonValue = JSON.parse('{"firstname":"Kriti","lastname":"jar"}')
+console.log(jsonValue) //Object literal
+
+//Object literal to JSO value
+
+var objectLiteral = {
+    firstname: "Kriti",
+    lastname: "jar"
+}
+
+console.log(JSON.stringify(objectLiteral));
 
 
 

@@ -255,7 +255,15 @@ Here d and c will point to same memory location as they are passed by reference.
 Mutate: to change something
 Immutable: can't be changed
 
-28) 
+28) Objects, functions and this keyword
+
+when a function is defined in a global env, this keyword inside function points to global object. in case of browser window object.
+This happens in both function statements and function expressions.
+
+But in case of methods(function as a property of object) this keyword points to method.
+
+But any function defined inside method, this points to global object.
+To resolve this declare a variable self pointing to this object inside method and use this self variable everywhere
 
 
 

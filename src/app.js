@@ -356,3 +356,26 @@ console.log(a.name) //manu
 //Now b and a points to different memory loaction and modifying b won't change a
 
 
+//---------------------------------------------//
+
+//This keyword for functions
+
+function a(){
+    console.log(this) //window
+}
+
+var b = function(){
+    console.log(this) //window
+}
+
+var c ={
+    name:'c object',
+    log: function(){
+        var self = this //by reference
+        console.log(this); //c object
+        function greet(){
+            console.log(this) //window
+            console.log(self) //c object
+        }
+    }
+}

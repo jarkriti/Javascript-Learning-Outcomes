@@ -216,6 +216,23 @@ in object literal syntax it is optional.
 Now-a-days JSON is used to transfer data in internet.
 JS provide easy way to convert data from object literal to JSON and other way
 
+25) First Class functions
+
+Everything that can be done with other types can be done by functions in JS
+
+Functions are objects.
+
+Function can contain primitive values, objects, and functions as their properties.
+
+It can be anonymous that is with no name.
+
+It has a code property that specifies what this function will do. Code property of function is invocable.
+
+
+26) Expression: unit of code that results in a value.
+
+
+
 
 
 

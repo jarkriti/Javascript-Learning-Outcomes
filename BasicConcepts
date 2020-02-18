@@ -229,7 +229,34 @@ It can be anonymous that is with no name.
 It has a code property that specifies what this function will do. Code property of function is invocable.
 
 
-26) Expression: unit of code that results in a value.
+26) Expression: unit of code that results in a value. Ex. a=3 returns 3
+    Statement: don't return anything. They just work. Like if statement.
+
+    Functions have function statements and function expressions.
+
+27) By reference and By value
+
+by value(primitive types)
+
+a=b
+
+a and b have same value but they point to different locations.
+
+If a is changed b is not affected
+
+by reference(objects and functions)
+
+var c = {name:'kriti'}
+
+var d= c
+
+Here d and c will point to same memory location as they are passed by reference.
+
+Mutate: to change something
+Immutable: can't be changed
+
+28) 
+
 
 
 

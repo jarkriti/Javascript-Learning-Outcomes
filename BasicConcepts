@@ -265,6 +265,91 @@ But in case of methods(function as a property of object) this keyword points to 
 But any function defined inside method, this points to global object.
 To resolve this declare a variable self pointing to this object inside method and use this self variable everywhere
 
+29) Arrays: collection of anything
+
+30) Arguments and spread operator
+
+Arguments: parameters you pass to a function
+
+JS gives a keyword that contains them all
+
+when parameters are passed to function, they can all be referred by array like variable called arguments.
+
+arguments[0] will hold first parameter.
+
+Spread operator `...`
+
+when passing arguments a last parameter can be ...other then all remaining values will be comtained in other array variable.
+
+31) Automatic semicolon insertion is done in JS.
+
+JS engine automatically inserts semicolon after return if there is a carriage return.
+
+Always put curly braces in same line to avoid this issue
+
+32) Whitespaces are allowed in JS code. Make it readable and understandable.
+
+33) Immediately Invoked Function expressions (IIFE)
+
+IIFE are useful when IIFE functions variable space doesn't collide with global space.
+It is immediately invoked and has its own execution context.
+
+34) Closures
+
+JS engine allows function execution context to enclose the outer variables it is pointing to even if their execution context
+is removes. 
+
+35) Callback functions and closures.
+
+Callback function: A function you give to another function , to be run when the other function is finished.
+So the function you call, calls back by calling the function you gave it when it finishes.
+
+36) All functions in JS have access to call(), apply(), bind() method.
+
+bind()
+
+bind function creates a copy of function and whatever object is passed as a parameter, it becomes this variable for that function.
+
+call() and apply() don't create copy instead call the function with object passed as this. 
+For call, arguments are passed normally but for apply they are passed as an argument.
+
+they are used for function borrowing
+
+37) function currying
+
+creating a copy of function but with some   preset parameters.
+
+useful in mathematical situations.
+
+38) Functional programming
+
+underscore.js library can be used for learning. It is open source library so that you can understand implementation
+lodash is another library for learning
+
+39) Object Oriented JS an dprototypal inheritance
+
+Inheritance: One object gets access to properties and methods of another object
+JS does that with protypal inheritance
+
+All objects in JS have property called proto
+
+objects can have reference to other objects with their proto{} property.
+
+This proto can have reference to another proto property. This forms prototype chain. Two object can refer to same objects.
+
+40) EVrything in JS is object or a primitive
+
+all the objects get a base object as their prototype that has all the properties and functions that you can use,.
+All the arrays has a base array that has push and other functions by default. and prototype of this base object is object prototype.
+
+FUnctions also have base function that has all the functions default properties like appply, bind, existence
+This function also has object prototype.
+
+In the end of prototype chain there is always a prototype that points to base Object{}
+
+41) Reflection and Extend
+
+Reflection: An object can look at itself, listing and changing its properties and methods.
 
 
 

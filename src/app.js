@@ -379,3 +379,270 @@ var c ={
         }
     }
 }
+
+//---------------------------------------------//
+
+//Arrays
+
+var arr = [
+    1,
+    false,
+    {
+        name: 'kriti',
+        age: 26
+    },
+    function name(){
+        console.log("hello");
+    }
+];
+
+arr[3](); //hello
+
+//---------------------------------------------//
+
+function greet(a,b,c,...d){
+    console.log(a) //kriti
+    console.log(arguments[1]) //sunhera
+    console.log(arguments.length) //5
+    console.log(d) //['ashna','mansi']
+}
+greet('kriti','sunhera','brina','ashna','mansi');
+
+//---------------------------------------------//
+
+//IIFE
+
+var greeting = function(name){
+    return 'Hello '+name;
+}('John');
+
+console.log(greeting); //Hello John
+
+//greeting now contains a string that was returned by IIFE.
+
+//if you want to avoid function expressions as above, a standalone function wrapped in paranthesis is also treted as function exp'
+
+
+//classic ex of IIFE
+(function(name){
+    console.log('Hello '+name);
+}('kriti')); //hello kriti
+
+//Invocation can be done inside the paranthesis or outside it. Anything is fine.
+
+
+//---------------------------------------------//
+
+//Closures
+
+function greet(whattosay){
+    return function(name){
+        console.log(whattosay +' '+ name);
+    }
+}
+
+greet('Hello')('Kriti'); //Hello Kriti
+
+//After greet is invoked it return a function but it is then removed from execution stack. Then that function is added to stack.
+
+//This function knows what is th evalue of whattosay variable because it is pointed by functions outer reference.
+//So function keeps value of their outer reference dow the scope chain. It is determined by their lexical presence.
+
+
+//Ex 2
+function buildfunctions(){
+    var arr = [];
+    for(var i=0;i<3;i++){
+
+        //let j =i
+        //let has block scoping so every time there will be a different memory spot for j and value of i will be preserved
+
+        arr.push(function(){
+            console.log(i);
+        });
+    }
+    return arr;
+}
+
+var fs = buildfunctions();
+
+fs[0](); //3
+fs[1](); //3  
+fs[2](); //3
+
+//arr is returned by buildfunctions. then it is removed from that stack.
+//But it contains reference to outer env.
+//When fs[0]() is invokded that time loop was already finished and value of i was 3.
+//Hence every time 3 is returned.
+
+
+//preserving value of i with IIFE
+function buildfunctions(){
+    var arr = [];
+    for(var i=0;i<3;i++){
+        arr.push(
+            (function(j){
+                return function(){
+                    console.log(j);
+                }
+            }(i)));
+    }
+    return arr;
+}
+
+var fs = buildfunctions();
+
+fs[0](); //0
+fs[1](); //1  
+fs[2](); //2
+
+//---------------------------------------------//
+
+//Callback functions and closures
+
+function sayhiLater(){
+    var greeting = 'Hi';
+    setTimeOut(function(){ //callback function
+        console.log(greeting); //closure greeting takes the value from functions outer reference 
+    },3000);
+}
+
+sayhiLater(); //HI after 3000 sec
+
+//---------------------------------------------//
+
+// bind() function example
+
+var person = {
+    firstname: 'John',
+    lastname: 'Doe',
+    getFullName: function(){
+        var fullname = this.firstname + " " + this.lastname;
+        return fullname;
+    }
+}
+
+var logname = function(lang1,lang2){
+    console.log(this.fullname()); //without bind this points to global env and will return undefined for fullname
+    console.log('Arguments: '+lang1+' '+lang2);
+}
+
+var logPersonName = logname.bind(person); //binds person object to logname function. this will point to person
+logPersonName('en');
+
+//call() function
+
+logname.call(person,'en','es');
+//Unlike bind() call() calls the function with first argument as the object for this variable and next arguments parameters to the function
+
+//apply() function
+logname.apply(person,['en','es']);
+//it does the eaxct samething but it expects argument array 
+
+(function(lang1,lang2){
+    console.log(this.fullname()); //without bind this points to global env and will return undefined for fullname
+    console.log('Arguments: '+lang1+' '+lang2);
+}.apply(person,['en','es'])) //calling function on the fly
+
+//Use
+
+//1. function borrowing
+
+var person2 = {
+    firstname:'Jane',
+    lastname:'Doe'
+}
+
+person.getFullName.apply(person2); //Jane DOe
+
+//2. function currying
+
+var multiply = function(a,b){
+    return a*b;
+}
+
+var multiplyByTwo = multiply.bind(this,2); // permanently sets value of a as 2 for multiplyByTwo function ref
+
+console.log(multiplyByTwo(3)); //6 3 sill be come 2
+
+
+
+//---------------------------------------------//
+
+//Functional programming usage
+
+function mapForEach(arr, fn){
+    var newArr = [];
+    for(var i=0; i<arr.length;i++){
+        newArr.push(fn(arr[i]));
+    }
+    return newArr;
+};
+
+var arr1 = [1,2,3];
+console.log(arr1);
+
+var arr2 = mapForEach(function(item){
+    return item *2;
+});
+console.log(arr2); //2,4,6
+
+var checkPastLimit = function(limiter,item){
+    return item>limiter;
+}
+var arr4=mapForEach(arr1,checkPastLimit.bind(this,1));
+console.log(arr4); //false true true
+
+//simplified 
+
+var checkPastLimitSimplified = function(limiter){
+    return function(limiter,item){
+        return item>limiter;
+    }.bind(this,limiter);
+}
+
+var arr5 = mapForEach(arr1,checkPastLimitSimplified(2));
+console.log(arr5); //false false true for arr1 1,2,3 
+
+//---------------------------------------------//
+
+//Prototypal inheritance
+
+var person = {
+    firstname:'default',
+    lastname:'default',
+    getFullName: function(){
+        return this.firstname + ' ' + this.lastname;
+    }
+}
+
+var p1 = {
+    firstname: 'Kriti',
+    lastname: 'Jar'
+}
+
+//Never ever do this
+//This tells that now p1 inherits from person. Any property method not found in p1 will  be checked in person
+p1.__proto__ = person;
+p1.getFullName(); //Kriti Jar
+
+//Reflection tells the properties and methods of the object
+
+for(var prop in john){ //prop states the properties on john object
+    if(john.hasOwnProperty(prop)){ //this checks if property is not on proto objects
+        console.log(prop + " "+john[prop]); //in square bracket notation peroperty name is passed as string
+    }
+}
+
+var jane={
+    address:'77N almaden'
+}
+var jim={
+    getFIrstName: function(){
+        return firstName;
+    }
+}
+
+
+_.extend(john,jane,jim) //john will contain all the properties and methods of jane and jim. 
+//In addition to this it will contain __proto__ property that will point to base object
